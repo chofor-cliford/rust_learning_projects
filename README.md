@@ -1,22 +1,22 @@
-# Rust Learning Projects ![Rust](https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg)
+# Rust Learning Projects <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg" alt="Rust" style="height: 20px;"/>
 
 Welcome to my Rust learning journey! This repository contains various projects and exercises as I learn Rust, with each new concept developed or continued on a separate branch.
 
 ## Table of Contents
 
-- [About](#about) 📖
-- [Projects](#projects) 🚀
-- [Branches](#branches) 🌿
-- [Installation](#installation) 💻
-- [Usage](#usage) 🛠️
-- [Contributing](#contributing) 🤝
-- [License](#license) 📜
+- <a href="#about">About</a> 📖
+- <a href="#projects">Projects</a> 🚀
+- <a href="#branches">Branches</a> 🌿
+- <a href="#installation">Installation</a> 💻
+- <a href="#usage">Usage</a> 🛠️
+- <a href="#contributing">Contributing</a> 🤝
+- <a href="#license">License</a> 📜
 
-## About 📖
+## <a name="about">About 📖</a>
 
 This repository is a collection of projects and exercises that I am working on to learn and master Rust. Each new concept is developed or continued by creating a new branch, allowing for organized and modular learning.
 
-## Projects 🚀
+## <a name="projects">Projects 🚀</a>
 
 Here are some of the concepts and projects I've covered:
 
@@ -29,7 +29,7 @@ Here are some of the concepts and projects I've covered:
 - **Project 7:** Error Handling
 - **Project 8:** Modules and Crates
 
-## Branches 🌿
+## <a name="branches">Branches 🌿</a>
 
 Each branch in this repository represents a different concept or project. Here are the branches and what they cover:
 
@@ -43,7 +43,7 @@ Each branch in this repository represents a different concept or project. Here a
 - `error-handling`: Error handling techniques.
 - `modules-crates`: Modules and crates in Rust.
 
-## Installation 💻
+## <a name="installation">Installation 💻</a>
 
 To get started with any of the projects, clone the repository:
 
@@ -58,7 +58,7 @@ Then, check out the branch you are interested in:
 git checkout branch-name
 ```
 
-## Usage 🛠️
+## <a name="usage">Usage 🛠️ <a/>
 
 Each branch contains its own README with specific instructions on how to run the project or exercise. Typically, you can build and run a Rust project using Cargo:
 
@@ -67,10 +67,10 @@ cargo build
 cargo run
 ```
 
-## Contributing 🤝
+## <a name="contributing">Contributing 🤝 <a/>
 
 I welcome contributions and suggestions! If you have any ideas for improvements or new concepts to cover, please open an issue or submit a pull request.
 
-## License 📜
+## <a name="license">License 📜 <a/>
 
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
