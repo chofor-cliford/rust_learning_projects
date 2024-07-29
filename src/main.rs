@@ -1,17 +1,20 @@
 fn main() {
-    let proceed = true;
-    if proceed {
-        println!("True branch");
-    } else {
-        println!("False branch");
-    }
-
-    let height = 190;
-    if height > 180 {
-        println!("Tall");
+    let mut height = 190;
+    height = height - 20;
+    let result = if height > 180 {
+        "Tall"
     } else if height > 170 {
-        println!("Average");
+        "Average"
     } else {
-        println!("Short");
-    }
+        "Short"
+    };
+
+    println!("The person is {}", result);
+
+    let health = if height < 180 {"good"} else {"unknown"};
+    println!("The person's health is {}", health);
+
+    // shadowing a different type
+    let health = if height < 180 {true} else {false};
+    println!("Is the person healthy? {}", health);
 }
