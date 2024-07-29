@@ -1,8 +1,17 @@
 fn main() {
-    let message = "Name: Chidinma, Weight:";
-    let weight = 190.0;
+    let proceed = true;
+    if proceed {
+        println!("True branch");
+    } else {
+        println!("False branch");
+    }
 
-    let kilos = weight / 2.2;
-    println!("{} {}", message, weight);
-    println!("{} {}", message, kilos);
+    let height = 190;
+    if height > 180 {
+        println!("Tall");
+    } else if height > 170 {
+        println!("Average");
+    } else {
+        println!("Short");
+    }
 }
