@@ -1,76 +1,70 @@
-# Rust Learning Projects ![Rust](https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg)
+# [![Coursera Course](./assets/banner.svg)](https://insight.paiml.com/rse "Coursera Specialization")
 
-Welcome to my Rust learning journey! This repository contains various projects and exercises as I learn Rust, with each new concept developed or continued on a separate branch.
+# Rust development environment setup
 
-## Table of Contents
+_Rust Bootcamp week 1: Setting up your development environment_
 
-- [About](#about) 📖
-- [Projects](#projects) 🚀
-- [Branches](#branches) 🌿
-- [Installation](#installation) 💻
-- [Usage](#usage) 🛠️
-- [Contributing](#contributing) 🤝
-- [License](#license) 📜
+This week, you will learn how to optimize your Rust development workflow using powerful tools such as programming suggestions, prompts with Copilot, and GitHub Codespaces. By diving into the lessons on programming with suggestions, using prompts with Copilot, and exploring the fundamentals of Codespaces, you will acquire the skills to streamline your coding process and collaborate more efficiently with others.
 
-## About 📖
+This is the first week of the Rust Bootcamp. There are 4 weeks in total:
 
-This repository is a collection of projects and exercises that I am working on to learn and master Rust. Each new concept is developed or continued by creating a new branch, allowing for organized and modular learning.
+- [week 1](https://github.com/alfredodeza/rust-setup) 👈 You are here!
+- [week 2](https://github.com/alfredodeza/rust-fundamentals)
+- [week 3](https://github.com/alfredodeza/rust-structs-types-enums/)
+- [week 4](https://github.com/alfredodeza/applied-rust)
 
-## Projects 🚀
+💡 Are you just looking for a 👉 [Rust template](https://github.com/alfredodeza/rust-template) to get started easily with a project? The [template](https://github.com/alfredodeza/rust-template) has everything you need!
 
-Here are some of the concepts and projects I've covered:
+## Is Rust difficult to learn?
+Contrary to what some think, Rust is not actually more difficult to learn than other languages including Python and TypeScript. In fact, [Google gathered data from its own engineers to understand how difficult it is to learn Rust](https://opensource.googleblog.com/2023/06/rust-fact-vs-fiction-5-insights-from-googles-rust-journey-2022.html). The final report found that most engineers felt proficient in Rust in 2 months or less, where some would feel proficient in as little as 3 weeks! 
 
-- **Project 1:** Basic Syntax and Hello World
-- **Project 2:** Variables and Data Types
-- **Project 3:** Control Flow
-- **Project 4:** Ownership and Borrowing
-- **Project 5:** Structs and Enums
-- **Project 6:** Collections
-- **Project 7:** Error Handling
-- **Project 8:** Modules and Crates
+🚀 **Watch the Video course**
 
-## Branches 🌿
+[![O'Reilly](https://learning.oreilly.com/covers/urn:orm:video:28080717VIDEOPAIML/400w/)](https://s.deza.pe/zjo "Rust Bootcamp")
 
-Each branch in this repository represents a different concept or project. Here are the branches and what they cover:
+## Contents
+This week has several references to supporting content that can help you setup your environment. Make sure you have Rust installed and you are using [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=academic-0000-alfredodeza).
 
-- `main`: Overview and setup of the repository.
-- `basic-syntax`: Basic syntax and Hello World.
-- `variables-data-types`: Variables and data types.
-- `control-flow`: Control flow constructs.
-- `ownership-borrowing`: Ownership and borrowing.
-- `structs-enums`: Structs and enums.
-- `collections`: Working with collections.
-- `error-handling`: Error handling techniques.
-- `modules-crates`: Modules and crates in Rust.
+This repository is [Codespaces](https://docs.github.com/en/codespaces/overview) *ready*, and it is set as a template repository. You can create a new repository from this template and start working on your own with Codespaces. This means that Rust, Copilot, and all the extensions are already installed and configured for you.
 
-## Installation 💻
+:fire: If you need a quick reference for Codespaces and configuration with Visual Studio Code, feel free to reuse the [configuration files](./.devcontainer) in this repository.
 
-To get started with any of the projects, clone the repository:
+### Lesson 1: Setting up your text editor
+- [Rust on Visual Studio Code](https://code.visualstudio.com/docs/languages/rust?WT.mc_id=academic-0000-alfredodeza)
+- [Install Rust on Windows](https://learn.microsoft.com/windows/dev-environment/rust/setup?WT.mc_id=academic-0000-alfredodeza)
+- [RustUp the toolchaing installer](https://rustup.rs/)
+- [Rust Analyzer extension](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer&WT.mc_id=academic-0000-alfredodeza)
 
-```bash
-git clone https://github.com/your-username/rust-learning-projects.git
-cd rust-learning-projects
-```
+Assignment: [Setting-up-your-text-editor](./lab.md#assignment-1-install-rust-with-visual-studio-code)
 
-Then, check out the branch you are interested in:
+### Lesson 2: Using AI pair-programming
+- [GitHub Copilot](https://docs.github.com/en/copilot/quickstart)
+- [Copilot for Students and Educators](https://aka.ms/Copilot4Students)
+- [Introduction to GitHub Copilot](https://learn.microsoft.com/training/modules/introduction-to-github-copilot/?WT.mc_id=academic-0000-alfredodeza)
 
-```bash
-git checkout branch-name
-```
+Assignment: [Enable GitHub Copilot](./lab.md#Assignment-2-Enable-GitHub-Copilot)
 
-## Usage 🛠️
+### Lesson 3: Codespaces for Rust
+- [Introduction to Codespaces](https://learn.microsoft.com/training/modules/work-azure-repos-github/6-develop-online-github-codespaces?WT.mc_id=academic-0000-alfredodeza)
+- [Codespaces for students](https://techcommunity.microsoft.com/t5/educator-developer-blog/what-is-github-codespaces-and-how-can-students-access-it-for/ba-p/3676103?WT.mc_id=academic-0000-alfredodeza)
+- [Managing quotas](https://techcommunity.microsoft.com/t5/educator-developer-blog/how-to-optimize-your-codespaces-pro-tips-for-managing-quotas/ba-p/3712032?WT.mc_id=academic-0000-alfredodeza)
 
-Each branch contains its own README with specific instructions on how to run the project or exercise. Typically, you can build and run a Rust project using Cargo:
+### Lesson 4: Practice Lab
 
-```bash
-cargo build
-cargo run
-```
+Use the [included lab](./lab.md) for this week to apply the concepts you've learned. The [lab](./lab.md) lab has 3 parts that are all relevant for what you've learned this week.
 
-## Contributing 🤝
+## Resources
 
-I welcome contributions and suggestions! If you have any ideas for improvements or new concepts to cover, please open an issue or submit a pull request.
+- [Rust Book](https://doc.rust-lang.org/book/)
+- [First steps with Rust Learning Path](https://learn.microsoft.com/training/paths/rust-first-steps/?WT.mc_id=academic-0000-alfredodeza)
+- [DevOps command-line tools in Python and Rust](https://learning.oreilly.com/videos/devops-command-line-tools/28037639VIDEOPAIML/)
 
-## License 📜
+**Coursera Courses**
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+- [MLOps Machine Learning Operations Specialization](https://www.coursera.org/specializations/mlops-machine-learning-duke)
+- [Linux and Bash for Data Engineering](https://www.coursera.org/learn/linux-and-bash-for-data-engineering-duke)
+- [Open Source Platforms for MLOps](https://www.coursera.org/learn/open-source-platforms-duke)
+- [Python Essentials for MLOps](https://www.coursera.org/learn/python-essentials-mlops-duke)
+- [Web Applications and Command-Line tools for Data Engineering](https://www.coursera.org/learn/web-app-command-line-tools-for-data-engineering-duke)
+- [Python and Pandas for Data Engineering](https://www.coursera.org/learn/python-and-pandas-for-data-engineering-duke)
+- [Scripting with Python and SQL for Data Engineering](https://www.coursera.org/learn/scripting-with-python-sql-for-data-engineering-duke)
