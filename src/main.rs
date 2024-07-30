@@ -1,12 +1,13 @@
-use std::io;
-
 fn main() {
-   let mut input = String::new();
-   while input.trim() != "stop" {
-    input.clear();
-    println!("Please enter a word (type 'stop' to exit):");
-    io::stdin().read_line(&mut input).expect("Failed to read line");
-    println!("You entered: {}", input);
-   }
-    println!("Goodbye!");
+for i in 1..=10 {
+    if i %2 == 0 {
+        // Skip even numbers
+        continue;
+    }
+    println!("{}", i);
+    if i == 7 {
+        // Exit the loop early
+        break;
+    }
+}
 }
