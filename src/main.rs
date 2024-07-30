@@ -1,27 +1,25 @@
-use std::io;
+fn process_numbers(numbers: &[i32]) {
+    // Initialize sum to 0
+    let mut sum = 0;
 
-fn main() {
-// let name = "Python";
-
-// use match to check the value of name
-// match name {
-//     "Rust" => println!("I'm learning Rust"),
-//     "Python" => println!("I'm learning Python"),
-//     _ => println!("I'm learning something else"),
-// }
-
-    println!("Please enter a greeting:");
-
-    let mut name = String::new();
-    io::stdin().read_line(&mut name).expect("Failed to read line");
-
-    // use of match to check the value of name
-    match name.trim() {
-        "Hello" => println!("Hello!"),
-        "Hi" => println!("Hi, nice to meet you!"),
-        "Hey" => println!("Hey!"),
-        "Good Bye" => println!("Sorry to see you go!"),
-        _ => println!("I don't know what you said"),
+    // Iterate over the numbers
+    for number in numbers {
+        // Add the number to the sum
+        sum += number;
     }
 
+    // Print the sum
+    println!("The sum of the numbers is: {}", sum);
+
+    // If the sum is even, print a message
+    if sum % 2 == 0 {
+        println!("The sum is even");
+    } else {
+        println!("The sum is odd");
+    }
+
+}
+
+fn main() {
+    process_numbers(&[1, 2, 3, 4, 5]);
 }
