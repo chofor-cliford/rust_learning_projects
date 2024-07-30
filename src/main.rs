@@ -6,6 +6,8 @@ struct User {
     active: bool,
 }
 
+struct  Points (i32, i32, i32);
+
 impl User {
     fn new(username: String, email: String, uri: String) -> Self {
         Self {
@@ -36,11 +38,21 @@ impl User {
 }
 
 fn main() {
-    let mut new_user = User::new(
-        String::from("alfredodeza"),
-        String::from("alfreodeza@example.com"),
-        String::from("https://alfredodeza.com"),
-    );
+    let username = String::from("alfredodeza");
+    let email = String::from("alfreodeza@example.com");
+    let uri = String::from("https://alfredodeza.com");
+    let active = true;
+
+    let mut new_user = User{
+        username,
+        email,
+        uri,
+        active,
+    };
+
+    let points = Points(1, 2, 3);
+    println!("Points: {}, {}, {}", points.0, points.1, points.2);
+
     println!("Hello, {}!", new_user.username);
     println!("Account {} status is: {}", new_user.username, new_user.active);
     new_user.deactivate();
