@@ -1,14 +1,12 @@
-fn main() {
-   // let mut be some value or None
-   let maybe_number : Option<Option <()>> = Some(None);
-    // match maybe_number {
-    //     Some(number) => println!("The number is: {}", number),
-    //     None => println!("There is no number!"),
-    // }
+use std::io;
 
-    if let Some(number) = maybe_number {
-        println!("The number is: {:?}", number);
-    } else {
-        println!("There is no number!");
-    }
+fn main() {
+   let mut input = String::new();
+   while input.trim() != "stop" {
+    input.clear();
+    println!("Please enter a word (type 'stop' to exit):");
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    println!("You entered: {}", input);
+   }
+    println!("Goodbye!");
 }
