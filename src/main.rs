@@ -1,13 +1,32 @@
-fn split_string(s: String, delimiter: char, field: usize) -> String {
-    let parts: Vec<&str> = s.split(delimiter).collect();
-    let result = parts.get(field);
+use std::io;
 
-    // This would not compile!
-    result.expect("oops! something went wrong").to_string() // To panic should we get an error.
+fn average(numbers: &[i32]) -> f64 {
+    let sum: i32 = numbers.iter().sum();
+    let count = numbers.len() as f64;
+    sum as f64 / count
 }
 
 fn main() {
-    let chunck = split_string("Hello, World".to_string(), ',', 1);
-    println!("Split string: {}", chunck);
+    let mut input = String::new();
+    
+    // Prompt the user to enter the number of elements
+    println!("Enter the number of elements:");
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let num_elements: usize = input.trim().parse().expect("Please enter a valid number");
+
+    // Initialize a vector to store the numbers
+    let mut numbers = Vec::new();
+
+    // Prompt the user to enter each number
+    for _ in 0..num_elements {
+        input.clear();
+        println!("Enter a number:");
+        io::stdin().read_line(&mut input).expect("Failed to read line");
+        let number: i32 = input.trim().parse().expect("Please enter a valid number");
+        numbers.push(number);
+    }
+
+    // Calculate the average and display the result
+    let result = average(&numbers);
+    println!("The average is: {}", result);
 }
- // This is the genric unit function
