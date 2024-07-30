@@ -1,30 +1,22 @@
-use std::env;
-use std::fs::File;
-use std::io::{self, BufRead, BufReader};
+struct Person {
+    first_name: String,
+    last_name: String,
+    age: Option<u8>,
+}
 
-fn main() -> io::Result<()> {
-    // Collect command-line arguments
-    let args: Vec<String> = env::args().collect();
 
-    // Check if a file path was provided
-    if args.len() < 2 {
-        eprintln!("Usage: {} <file_path>", args[0]);
-        std::process::exit(1);
-    }
+fn main() {
+let chidima = Person {
+    first_name: "Chidima".to_string(),
+    last_name: "Eze".to_string(),
+    age: Some(100),
+};
 
-    let file_path = &args[1];
+println!("First Name: {}", chidima.first_name);
+println!("Last Name: {}", chidima.last_name);
+println!("Age: {:?}", chidima.age);
 
-    // Attempt to open the file
-    let file = File::open(file_path)?;
+// Or
+// println!(":?", chidima);
 
-    // Read the file line by line and print its contents
-    let reader = BufReader::new(file);
-    for line in reader.lines() {
-        match line {
-            Ok(content) => println!("{}", content),
-            Err(e) => eprintln!("Error reading line: {}", e),
-        }
-    }
-
-    Ok(())
 }
