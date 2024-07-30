@@ -1,18 +1,19 @@
+fn print_str(s: &str) {
+    let mut new_string = format!("{}! other string", s);
+    new_string.push_str("!");
+    println!("{}", new_string);
+}
+
+fn print_string(s: String) {
+    println!("{}", s);
+}
+
 fn main() {
+    let s: &str = "hello, world";
+    print_str(s);
 
-    // String slice
-   let hello : &str = "Hello, World!";
-    println!("String slice: {}", hello);
-
-    // Creating an empty vector and adding elements to it
-    let mut numbers: Vec<i32> = Vec::new();
-    numbers.push(1);
-    numbers.push(2);
-    numbers.push(3);
-    println!("Vector: {:?}", numbers);
-
-    // Creating a string with from() method
-    let mut greeting = String::from("Hello");
-    greeting.push_str(", World!");
-    println!("String: {}", greeting);
+    // String is a heap-allocated string
+    // It is growable, mutable, and owned
+    let salutation = String::from("hello");
+    print_string(salutation);
 }
