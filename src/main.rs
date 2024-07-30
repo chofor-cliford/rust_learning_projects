@@ -1,11 +1,14 @@
 fn main() {
-   let mut x = 1;
-   // continue looping until x > 5
-   loop { // Similar to while true
-      if x > 5 {
-         break;
-      }
-      println!("x = {}", x);
-      x += 1;
-   }
+   // let mut be some value or None
+   let maybe_number : Option<Option <()>> = Some(None);
+    // match maybe_number {
+    //     Some(number) => println!("The number is: {}", number),
+    //     None => println!("There is no number!"),
+    // }
+
+    if let Some(number) = maybe_number {
+        println!("The number is: {:?}", number);
+    } else {
+        println!("There is no number!");
+    }
 }
