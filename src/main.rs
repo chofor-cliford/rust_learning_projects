@@ -1,25 +1,13 @@
-fn process_numbers(numbers: &[i32]) {
-    // Initialize sum to 0
-    let mut sum = 0;
+fn split_string(s: String, delimiter: char, field: usize) -> String {
+    let parts: Vec<&str> = s.split(delimiter).collect();
+    let result = parts.get(field);
 
-    // Iterate over the numbers
-    for number in numbers {
-        // Add the number to the sum
-        sum += number;
-    }
-
-    // Print the sum
-    println!("The sum of the numbers is: {}", sum);
-
-    // If the sum is even, print a message
-    if sum % 2 == 0 {
-        println!("The sum is even");
-    } else {
-        println!("The sum is odd");
-    }
-
+    // This would not compile!
+    result.expect("oops! something went wrong").to_string() // To panic should we get an error.
 }
 
 fn main() {
-    process_numbers(&[1, 2, 3, 4, 5]);
+    let chunck = split_string("Hello, World".to_string(), ',', 1);
+    println!("Split string: {}", chunck);
 }
+ // This is the genric unit function
