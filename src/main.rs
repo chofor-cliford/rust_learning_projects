@@ -1,45 +1,47 @@
-enum DiskType {
-    SSD,
-    HDD,
-}
-
 #[derive(Debug)]
-
-enum DiskSize {
-    KB(u32),
-    MB(u32),
-    GB(u32),
+enum WineRegions {
+    Bordeaux,
+    Burgundy,
+    Champagne,
+    Loire,
+    Rhone,
+    NapaValley,
+    Tuscany,
 }
 
-enum Shape {
-    Circle(f64),
-    Rectangle(f64, f64),
-    Square(f64),
+struct Wine {
+    name: String,
+    region: WineRegions,
+}
+
+fn supported_regions(wine: WineRegions) {
+    match wine {
+        WineRegions::Bordeaux => println!("Bordeaux is supported!"),
+        WineRegions::Burgundy => println!("Burgundy is supported!"),
+        WineRegions::Champagne => println!("Champagne is supported!"),
+        WineRegions::Loire => println!("Loire is supported!"),
+        WineRegions::Rhone => println!("Rhone is supported!"),
+        WineRegions::NapaValley => println!("Napa Valley is supported!"),
+        WineRegions::Tuscany => println!("Tuscany is supported!"),
+    }
 }
 
 fn main() {
-    let disk_type = DiskType::SSD;
-    // Can't compare them like this!
-    // if disk_type == DiskType::SSD {
-    //     println!("It's an SSD!");
-    // } else {
-    //     println!("It's not an SSD!");
-    // }
+    let wine1 = Wine {
+        name: String::from("Chateau Margaux"),
+        region: WineRegions::Bordeaux,
+    };
 
-    // Instead, we can use a match statement
-    match disk_type {
-        DiskType::SSD => println!("It's an SSD!"),
-        DiskType::HDD => println!("It's not an SSD!"),
-    }
+    let wine2 = Wine {
+        name: String::from("Barolo"),
+        region: WineRegions::Tuscany,
+    };
 
-    let disk_size = DiskSize::GB(512);
-    println!("Disk size: {:?}", disk_size);
+    // supported_regions(wine1);
+    // println!("Wine 1: {} from {:?}", wine1.name, wine1.region);
+    // println!("Wine 2: {} from {:?}", wine2.name, wine2.region);
 
-    let shape = Shape::Rectangle(3.0, 5.8);
-    match shape {
-        Shape::Circle(radius) => println!("Circle with radius: {}", radius),
-        Shape::Rectangle(width, height) => println!("Rectangle with width: {} and height: {}", width, height),
-        Shape::Square(side) => println!("Square with side: {}", side),
-    }
-
+    supported_regions(wine1.region);
+    supported_regions(wine2.region);
+    supported_regions(WineRegions::NapaValley);
 }
