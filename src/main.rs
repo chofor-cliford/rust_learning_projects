@@ -1,18 +1,22 @@
-use std::io::{BufRead, BufReader};
+// src/main.rs
 
-pub fn read_stdin() -> String {
-    let stdin = std::io::stdin();
-    let mut reader = BufReader::new(stdin.lock());
-    _read_stdin(&mut reader)
-}
-
-fn _read_stdin<R: BufRead> (reader: &mut R) -> String {
-    let mut line = String::new();
-    reader.read_line(&mut line).expect("Failed to read line");
-    line.trim().to_string()
-}
+use lib::{FileSize, Sizes};
 
 fn main() {
-    let input = read_stdin();
-    println!("{}", input);
+    let size = 24000000;
+    let filesize = match size {
+        0..=999 => FileSize::Bytes(size),
+        1000..=999_999 => FileSize::KiloBytes(size / 1000),
+        1_000_000..=999_999_999 => FileSize::MegaBytes(size / 1_000_000),
+        _ => FileSize::GigaBytes(size / 1_000_000_000),
+    };
+    println!("{}", filesize.format_size());
+
+    let sizes = Sizes::new(size);
+    println!("{:?}", sizes);
+
+    println!("In KB: {:.2}", sizes.to_kilobytes());
+    println!("In MB: {:.2}", sizes.to_megabytes());
+    println!("In GB: {:.2}", sizes.to_gigabytes());
 }
+
