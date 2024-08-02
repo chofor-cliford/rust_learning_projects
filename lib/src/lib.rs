@@ -1,49 +1,28 @@
-// src/lib.rs
+//! This is a library that provides a utility function to read a line from the standard input. 
+//! So far it only provides a function to read a line from the standard input and return it as a String.
+//! # Examples
+//! ```
+//! let input = lib::read_stdin();
+//! println!("{}", input);
+//! ```
+//! 
+//! # Panics
+//! The function will panic if it fails to read a line from the standard input.
 
-#[derive(Debug)]
-pub struct Sizes {
-    pub bytes: String,
-    pub kilobytes: String,
-    pub megabytes: String,
-    pub gigabytes: String,
+use std::io::{BufReader, BufRead};
+
+/// This function reads a line from the standard input and returns it as a String.
+/// It will panic if it fails to read a line.
+///  # Examples
+/// ```
+/// let input = lib::read_stdin();
+/// println!("{}", input);
+/// ```
+pub fn read_stdin() -> String {
+    let stdin = std::io::stdin();
+    let mut reader = BufReader::new(stdin.lock());
+    let mut line = String::new();
+    reader.read_line(&mut line).expect("Failed to read line");
+    line.trim().to_string()
 }
 
-impl Sizes {
-    pub fn new(bytes: u64) -> Self {
-        Sizes {
-            bytes: format!("{} bytes", bytes),
-            kilobytes: format!("{} kilobytes", bytes / 1000),
-            megabytes: format!("{} megabytes", bytes / 1_000_000),
-            gigabytes: format!("{} gigabytes", bytes / 1_000_000_000),
-        }
-    }
-     pub fn to_kilobytes(&self) -> f64 {
-        self.bytes.replace(" bytes", "").parse::<u64>().unwrap() as f64 / 1000.0
-    }
-
-    pub fn to_megabytes(&self) -> f64 {
-        self.bytes.replace(" bytes", "").parse::<u64>().unwrap() as f64 / 1_000_000.0
-    }
-
-    pub fn to_gigabytes(&self) -> f64 {
-        self.bytes.replace(" bytes", "").parse::<u64>().unwrap() as f64 / 1_000_000_000.0
-    }
-}
-
-pub enum FileSize {
-    Bytes(u64),
-    KiloBytes(u64),
-    MegaBytes(u64),
-    GigaBytes(u64),
-}
-
-impl FileSize {
-    pub fn format_size(&self) -> String {
-        match self {
-            FileSize::Bytes(bytes) => format!("{} bytes", bytes),
-            FileSize::KiloBytes(kb) => format!("{:.2} KB", *kb as f64 / 1000.0),
-            FileSize::MegaBytes(mb) => format!("{:.2} MB", *mb as f64 / 1000.0),
-            FileSize::GigaBytes(gb) => format!("{:.2} GB", *gb as f64 / 1000.0),
-        }
-    }
-}
